@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-canvas: #07111f;
+  --color-surface-lowest: #050e1c;
+  --color-surface-low: #121c2a;
+  --color-surface-card: #16202f;
+  --color-surface-high: #212a39;
+  --color-surface-highest: #2c3545;
+  
+  --color-primary-blue: #1677ff;
+  --color-primary-light: #afc6ff;
+  --color-crypto-cyan: #00b8d9;
+  --color-crypto-light: #48d7f9;
+  --color-audit-green: #52c41a;
+  --color-audit-light: #6de039;
+  --color-alert-red: #ff4d4f;
+  --color-alert-light: #ffb4ab;
+  --color-warn-amber: #faad14;
+  --color-text-on-surface: #d9e3f7;
+  --color-text-muted: #8b90a0;
+  --color-border-subtle: #414755;
+  
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-headline: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a1422;
+    color: #d9e3f7;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #07111f;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #212a39;
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2c3545;
+}
+
+/* Radar Sweep Animation */
+.radar-sweep {
+  background: conic-gradient(from 0deg, rgba(72, 215, 249, 0.3) 0deg, rgba(72, 215, 249, 0) 65deg);
+  animation: radar-spin 3s linear infinite;
+}
+
+@keyframes radar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cryptographic Subtle Pulse & Glows */
+.crypto-glow-blue {
+  box-shadow: 0 0 16px rgba(22, 119, 255, 0.25);
+}
+
+.crypto-glow-cyan {
+  box-shadow: 0 0 14px rgba(0, 184, 217, 0.25);
+}
+
+.crypto-glow-green {
+  box-shadow: 0 0 14px rgba(82, 196, 26, 0.25);
+}
+
+.crypto-glow-red {
+  box-shadow: 0 0 18px rgba(255, 77, 79, 0.3);
+}
